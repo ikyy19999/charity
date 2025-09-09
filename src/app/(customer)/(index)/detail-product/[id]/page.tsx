@@ -24,19 +24,19 @@ export default async function DetailProductPage({params}: DetailProductProp) {
 
   return (
     <>
-    <header className="bg-[#EFF3FA] pt-[30px] h-[480px] -mb-[310px]">
+    <header className="bg-[#FFF8F0] pt-[30px] h-[480px] -mb-[310px]">
         <Navbar />
     </header>
     <div id="title" className="container max-w-[1130px] mx-auto flex items-center justify-between">
         <div className="flex flex-col gap-5">
             <div className="flex gap-5 items-center">
-                <a className="page text-sm text-[#6A7789] last-of-type:text-black">Shop</a>
-                <span className="text-sm text-[#6A7789]">/</span>
-                <a className="page text-sm text-[#6A7789] last-of-type:text-black">Browse</a>
-                <span className="text-sm text-[#6A7789]">/</span>
-                <a className="page text-sm text-[#6A7789] last-of-type:text-black">Details</a>
+                <a className="page text-sm text-[#8D6E63] last-of-type:text-[#5C2C0C]">Shop</a>
+                <span className="text-sm text-[#8D6E63]">/</span>
+                <a className="page text-sm text-[#8D6E63] last-of-type:text-[#5C2C0C]">Browse</a>
+                <span className="text-sm text-[#8D6E63]">/</span>
+                <a className="page text-sm text-[#8D6E63] last-of-type:text-[#5C2C0C]">Details</a>
             </div>
-            <h1 className="font-bold text-4xl leading-9">{product.name}</h1>
+            <h1 className="font-bold text-4xl leading-9 text-[#5C2C0C]">{product.name}</h1>
         </div>
         <div className="flex items-center gap-2 justify-end">
             <div className="flex items-center">
@@ -56,51 +56,51 @@ export default async function DetailProductPage({params}: DetailProductProp) {
                     <img src="/assets/icons/Star-gray.svg" alt="star" />
                 </div>
             </div>
-            <p className="font-semibold">({product._count.orders})</p>
+            <p className="font-semibold text-[#5C2C0C]">({product._count.orders})</p>
         </div>
     </div>
     <CarouseImages images={product.images} />
     <div id="details-benefits" className="container max-w-[1130px] mx-auto flex items-center gap-[50px] justify-center mt-[50px]">
         <div className="flex items-center gap-[10px]">
             <div className="w-12 h-12 flex shrink-0 rounded-full bg-[#FFC736] items-center justify-center overflow-hidden">
-                <img src="/assets/icons/star-outline.svg" alt="icon" />
+                <img src="/assets/icons/star-outline.svg" alt="freshness icon" />
             </div>
-            <p className="font-semibold text-sm">Include Official <br /> Warranty</p>
+            <p className="font-semibold text-sm text-[#5C2C0C]">Freshly Baked <br /> Daily</p>
         </div>
-        <div className="border-[0.5px] border-[#E5E5E5] h-12"></div>
+        <div className="border-[0.5px] border-[#F5E6D8] h-12"></div>
         <div className="flex items-center gap-[10px]">
             <div className="w-12 h-12 flex shrink-0 rounded-full bg-[#FFC736] items-center justify-center overflow-hidden">
-                <img src="/assets/icons/code-circle.svg" alt="icon" />
+                <img src="/assets/icons/code-circle.svg" alt="ingredients icon" />
             </div>
-            <p className="font-semibold text-sm">Bonus Mac OS <br /> Capitan Pro</p>
+            <p className="font-semibold text-sm text-[#5C2C0C]">100% Natural <br /> Ingredients</p>
         </div>
-        <div className="border-[0.5px] border-[#E5E5E5] h-12"></div>
+        <div className="border-[0.5px] border-[#F5E6D8] h-12"></div>
         <div className="flex items-center gap-[10px]">
             <div className="w-12 h-12 flex shrink-0 rounded-full bg-[#FFC736] items-center justify-center overflow-hidden">
-                <img src="/assets/icons/like.svg" alt="icon" />
+                <img src="/assets/icons/like.svg" alt="quality icon" />
             </div>
-            <p className="font-semibold text-sm">100% Original <br /> From Factory</p>
+            <p className="font-semibold text-sm text-[#5C2C0C]">Handcrafted With <br /> Love</p>
         </div>
-        <div className="border-[0.5px] border-[#E5E5E5] h-12"></div>
+        <div className="border-[0.5px] border-[#F5E6D8] h-12"></div>
         <div className="flex items-center gap-[10px]">
             <div className="w-12 h-12 flex shrink-0 rounded-full bg-[#FFC736] items-center justify-center overflow-hidden">
-                <img src="/assets/icons/tag.svg" alt="icon" />
+                <img src="/assets/icons/tag.svg" alt="delivery icon" />
             </div>
-            <p className="font-semibold text-sm">Free Tax On <br /> Every Sale</p>
+            <p className="font-semibold text-sm text-[#5C2C0C]">Free Delivery <br /> Available</p>
         </div>
     </div>
     <div id="details-info" className="container max-w-[1030px] mx-auto flex justify-between gap-5 mt-[50px]">
         <div className="max-w-[650px] w-full flex flex-col gap-[30px]">
             <div id="about" className="flex flex-col gap-[10px]">
-                <h3 className="font-semibold">About Product</h3>
-                <p className="leading-[32px]">
+                <h3 className="font-semibold text-[#5C2C0C]">About This Pastry</h3>
+                <p className="leading-[32px] text-[#8D6E63]">
                     {product.description}
                 </p>
             </div>
             <div id="testi" className="flex flex-col gap-[10px]">
-                <h3 className="font-semibold">Real Testimonials</h3>
+                <h3 className="font-semibold text-[#5C2C0C]">Customer Reviews</h3>
                 <div className="grid grid-cols-2 gap-5">
-                    <div className="testi-card flex flex-col bg-white p-5 gap-5 border border-[#E5E5E5] rounded-[20px] h-fit">
+                    <div className="testi-card flex flex-col bg-white p-5 gap-5 border border-[#F5E6D8] rounded-[20px] h-fit hover:shadow-md transition-shadow">
                         <div className="flex">
                             <div className="flex shrink-0">
                                 <img src="/assets/icons/Star.svg" alt="star" />
@@ -118,18 +118,18 @@ export default async function DetailProductPage({params}: DetailProductProp) {
                                 <img src="/assets/icons/Star-gray.svg" alt="star" />
                             </div>
                         </div>
-                        <p className="line-clamp-2 hover:line-clamp-none leading-[28px]">I do really love this product helped me to achieve my first million Lorem ipsum dolor sit amet.</p>
+                        <p className="line-clamp-2 hover:line-clamp-none leading-[28px] text-[#5C2C0C]">The flakiest croissant I've ever had! Perfect with my morning coffee.</p>
                         <div className="flex items-center gap-[10px]">
-                            <div className="w-[50px] h-[50px] flex shrink-0 rounded-full p-1 border border-[#E5E5E5] overflow-hidden">
-                                <img src="/assets/photos/p2.png" className="w-full h-full object-cover rounded-full" alt="photo" />
+                            <div className="w-[50px] h-[50px] flex shrink-0 rounded-full p-1 border border-[#F5E6D8] overflow-hidden">
+                                <img src="/assets/photos/p2.png" className="w-full h-full object-cover rounded-full" alt="Angga Risky" />
                             </div>
                             <div className="flex flex-col gap-[2px]">
-                                <p className="font-semibold text-sm leading-[22px]">Angga Risky</p>
-                                <p className="text-xs leading-[18px]">12 January 2028</p>
+                                <p className="font-semibold text-sm leading-[22px] text-[#5C2C0C]">Angga Risky</p>
+                                <p className="text-xs leading-[18px] text-[#8D6E63]">12 January 2028</p>
                             </div>
                         </div>
                     </div>
-                    <div className="testi-card flex flex-col bg-white p-5 gap-5 border border-[#E5E5E5] rounded-[20px] h-fit">
+                    <div className="testi-card flex flex-col bg-white p-5 gap-5 border border-[#F5E6D8] rounded-[20px] h-fit hover:shadow-md transition-shadow">
                         <div className="flex">
                             <div className="flex shrink-0">
                                 <img src="/assets/icons/Star.svg" alt="star" />
@@ -147,18 +147,18 @@ export default async function DetailProductPage({params}: DetailProductProp) {
                                 <img src="/assets/icons/Star-gray.svg" alt="star" />
                             </div>
                         </div>
-                        <p className="line-clamp-2 hover:line-clamp-none leading-[28px]">I do really love this product helped me to achieve my first million Lorem ipsum dolor sit amet.</p>
+                        <p className="line-clamp-2 hover:line-clamp-none leading-[28px] text-[#5C2C0C]">Good value for money. The chocolate filling was rich and delicious.</p>
                         <div className="flex items-center gap-[10px]">
-                            <div className="w-[50px] h-[50px] flex shrink-0 rounded-full p-1 border border-[#E5E5E5] overflow-hidden">
-                                <img src="/assets/photos/p4.png" className="w-full h-full object-cover rounded-full" alt="photo" />
+                            <div className="w-[50px] h-[50px] flex shrink-0 rounded-full p-1 border border-[#F5E6D8] overflow-hidden">
+                                <img src="/assets/photos/p4.png" className="w-full h-full object-cover rounded-full" alt="Sarifuding" />
                             </div>
                             <div className="flex flex-col gap-[2px]">
-                                <p className="font-semibold text-sm leading-[22px]">Sarifuding</p>
-                                <p className="text-xs leading-[18px]">12 January 2028</p>
+                                <p className="font-semibold text-sm leading-[22px] text-[#5C2C0C]">Sarifuding</p>
+                                <p className="text-xs leading-[18px] text-[#8D6E63]">12 January 2028</p>
                             </div>
                         </div>
                     </div>
-                    <div className="testi-card flex flex-col bg-white p-5 gap-5 border border-[#E5E5E5] rounded-[20px] h-fit">
+                    <div className="testi-card flex flex-col bg-white p-5 gap-5 border border-[#F5E6D8] rounded-[20px] h-fit hover:shadow-md transition-shadow">
                         <div className="flex">
                             <div className="flex shrink-0">
                                 <img src="/assets/icons/Star.svg" alt="star" />
@@ -176,18 +176,18 @@ export default async function DetailProductPage({params}: DetailProductProp) {
                                 <img src="/assets/icons/Star.svg" alt="star" />
                             </div>
                         </div>
-                        <p className="line-clamp-2 hover:line-clamp-none leading-[28px]">I do really love this product helped me to achieve my first million Lorem ipsum dolor sit amet.</p>
+                        <p className="line-clamp-2 hover:line-clamp-none leading-[28px] text-[#5C2C0C]">Absolutely delicious! The perfect balance of sweetness and texture.</p>
                         <div className="flex items-center gap-[10px]">
-                            <div className="w-[50px] h-[50px] flex shrink-0 rounded-full p-1 border border-[#E5E5E5] overflow-hidden">
-                                <img src="/assets/photos/p3.png" className="w-full h-full object-cover rounded-full" alt="photo" />
+                            <div className="w-[50px] h-[50px] flex shrink-0 rounded-full p-1 border border-[#F5E6D8] overflow-hidden">
+                                <img src="/assets/photos/p3.png" className="w-full h-full object-cover rounded-full" alt="Ika Nurina" />
                             </div>
                             <div className="flex flex-col gap-[2px]">
-                                <p className="font-semibold text-sm leading-[22px]">Ika Nurina</p>
-                                <p className="text-xs leading-[18px]">12 January 2028</p>
+                                <p className="font-semibold text-sm leading-[22px] text-[#5C2C0C]">Ika Nurina</p>
+                                <p className="text-xs leading-[18px] text-[#8D6E63]">12 January 2028</p>
                             </div>
                         </div>
                     </div>
-                    <div className="testi-card flex flex-col bg-white p-5 gap-5 border border-[#E5E5E5] rounded-[20px] h-fit">
+                    <div className="testi-card flex flex-col bg-white p-5 gap-5 border border-[#F5E6D8] rounded-[20px] h-fit hover:shadow-md transition-shadow">
                         <div className="flex">
                             <div className="flex shrink-0">
                                 <img src="/assets/icons/Star.svg" alt="star" />
@@ -205,43 +205,14 @@ export default async function DetailProductPage({params}: DetailProductProp) {
                                 <img src="/assets/icons/Star-gray.svg" alt="star" />
                             </div>
                         </div>
-                        <p className="line-clamp-2 hover:line-clamp-none leading-[28px]">I do really love this product helped me to achieve my first million Lorem ipsum dolor sit amet.</p>
+                        <p className="line-clamp-2 hover:line-clamp-none leading-[28px] text-[#5C2C0C]">My family loves these pastries! We order them every weekend.</p>
                         <div className="flex items-center gap-[10px]">
-                            <div className="w-[50px] h-[50px] flex shrink-0 rounded-full p-1 border border-[#E5E5E5] overflow-hidden">
-                                <img src="/assets/photos/p1.png" className="w-full h-full object-cover rounded-full" alt="photo" />
+                            <div className="w-[50px] h-[50px] flex shrink-0 rounded-full p-1 border border-[#F5E6D8] overflow-hidden">
+                                <img src="/assets/photos/p1.png" className="w-full h-full object-cover rounded-full" alt="Sami Mami" />
                             </div>
                             <div className="flex flex-col gap-[2px]">
-                                <p className="font-semibold text-sm leading-[22px]">Sami Mami</p>
-                                <p className="text-xs leading-[18px]">12 January 2028</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="testi-card flex flex-col bg-white p-5 gap-5 border border-[#E5E5E5] rounded-[20px] h-fit">
-                        <div className="flex">
-                            <div className="flex shrink-0">
-                                <img src="/assets/icons/Star.svg" alt="star" />
-                            </div>
-                            <div className="flex shrink-0">
-                                <img src="/assets/icons/Star.svg" alt="star" />
-                            </div>
-                            <div className="flex shrink-0">
-                                <img src="/assets/icons/Star.svg" alt="star" />
-                            </div>
-                            <div className="flex shrink-0">
-                                <img src="/assets/icons/Star-gray.svg" alt="star" />
-                            </div>
-                            <div className="flex shrink-0">
-                                <img src="/assets/icons/Star-gray.svg" alt="star" />
-                            </div>
-                        </div>
-                        <p className="line-clamp-2 hover:line-clamp-none leading-[28px]">I do really love this product helped me to achieve my first million Lorem ipsum dolor sit amet.</p>
-                        <div className="flex items-center gap-[10px]">
-                            <div className="w-[50px] h-[50px] flex shrink-0 rounded-full p-1 border border-[#E5E5E5] overflow-hidden">
-                                <img src="/assets/photos/p2.png" className="w-full h-full object-cover rounded-full" alt="photo" />
-                            </div>
-                            <div className="flex flex-col gap-[2px]">
-                                <p className="font-semibold text-sm leading-[22px]">Baronia</p>
-                                <p className="text-xs leading-[18px]">12 January 2028</p>
+                                <p className="font-semibold text-sm leading-[22px] text-[#5C2C0C]">Sami Mami</p>
+                                <p className="text-xs leading-[18px] text-[#8D6E63]">12 January 2028</p>
                             </div>
                         </div>
                     </div>
@@ -257,18 +228,17 @@ export default async function DetailProductPage({params}: DetailProductProp) {
          }} />
     </div>
     <div id="recommedations" className="container max-w-[1130px] mx-auto flex flex-col gap-[30px] pb-[100px] mt-[70px]">
-    <Suspense fallback={<span>Loading...</span>}>
-                <ListProducts
-					title={
-						<>
-							Other Products <br /> You Might Need
-						</>
-					}
-                    isShowDetail={false}
-				/>
-                </Suspense>
+        <Suspense fallback={<span>Loading...</span>}>
+            <ListProducts
+                title={
+                    <>
+                        You Might Also <br /> Like These
+                    </>
+                }
+                isShowDetail={false}
+            />
+        </Suspense>
     </div>
-    
-    </>
+</>
   )
 }

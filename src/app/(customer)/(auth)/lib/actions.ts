@@ -1,4 +1,4 @@
-"use server"
+'use server'
 
 import { schemaSignIn, schemaSignUp } from "@/lib/schema"
 import { ActionResult } from "@/types"
@@ -91,5 +91,47 @@ export async function signUp(
     }
 
     return redirect('/sign-in')
+}
 
+export async function logout(): Promise<void> {
+    const cookieStore = cookies()
+    const sessionId = (await cookieStore).get(lucia.sessionCookieName)?.value ?? null
+    
+    if (!sessionId) {
+        // Jika tidak ada session, redirect ke halaman login
+        return redirect('/sign-in')
+    }
+    
+    // Hapus session dari database
+    await lucia.invalidateSession(sessionId)
+    
+    // Buat session cookie yang kosong
+    const sessionCookie = lucia.createBlankSessionCookie()
+    
+    // Set cookie yang kosong untuk menghapus session
+    ;(await cookieStore).set(
+        sessionCookie.name,
+        sessionCookie.value,
+        sessionCookie.attributes
+    )
+    
+    // Redirect ke halaman login setelah logout
+    return redirect('/sign-in')
+}
+
+// Fungsi untuk menghapus session (optional, bisa digunakan di tempat lain)
+export async function deleteSession(): Promise<void> {
+    const cookieStore = cookies()
+    const sessionId = (await cookieStore).get(lucia.sessionCookieName)?.value ?? null
+    
+    if (sessionId) {
+        await lucia.invalidateSession(sessionId)
+    }
+    
+    const sessionCookie = lucia.createBlankSessionCookie()
+    ;(await cookieStore).set(
+        sessionCookie.name,
+        sessionCookie.value,
+        sessionCookie.attributes
+    )
 }
