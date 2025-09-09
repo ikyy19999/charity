@@ -4,11 +4,10 @@ import { Button } from "@/components/ui/button";
 import { getImageUrl } from "@/lib/supabase";
 import { Brand } from "@prisma/client";
 import { ColumnDef } from "@tanstack/react-table";
-import { Edit, Trash } from "lucide-react";
+import { Edit } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import FormDelete from "./_components/form-delete";
-// import FormDelete from "./_components/form-delete";
 
 export const columns: ColumnDef<Brand>[] = [
 	{

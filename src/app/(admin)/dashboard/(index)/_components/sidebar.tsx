@@ -4,13 +4,9 @@ import {
     Archive,
 	Building,
 	Home,
-	LineChart,
-	LogOut,
 	MapPin,
 	Package,
 	Package2,
-	Search,
-	Settings,
 	ShoppingCart,
 	Users2,
 } from "lucide-react";

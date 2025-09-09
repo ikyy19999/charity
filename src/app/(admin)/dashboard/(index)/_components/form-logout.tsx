@@ -1,6 +1,4 @@
 "use client"
-
-import { Button } from "@/components/ui/button";
 import {
 	Tooltip,
 	TooltipContent,
@@ -8,7 +6,6 @@ import {
 } from "@/components/ui/tooltip";
 import { ActionResult } from "@/types";
 import { LogOut } from "lucide-react";
-import Link from "next/link";
 import React, { useActionState } from "react";
 import { Logout } from "../lib/actions";
 

@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Location } from "@prisma/client";
 import { ColumnDef } from "@tanstack/react-table";
-import { Edit, Trash } from "lucide-react";
+import { Edit } from "lucide-react";
 import Link from "next/link";
 import FormDelete from "./_components/form-delete";
 
