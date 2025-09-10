@@ -16,9 +16,6 @@ import { useFormStatus } from "react-dom";
 import { SignIn } from "../lib/actions";
 import { ActionResult } from "@/types";
 
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { AlertCircle } from "lucide-react";
-
 const initialState: ActionResult = {
 	error: "",
 };

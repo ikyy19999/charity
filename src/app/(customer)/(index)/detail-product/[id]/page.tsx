@@ -118,7 +118,7 @@ export default async function DetailProductPage({params}: DetailProductProp) {
                                 <img src="/assets/icons/Star-gray.svg" alt="star" />
                             </div>
                         </div>
-                        <p className="line-clamp-2 hover:line-clamp-none leading-[28px] text-[#5C2C0C]">The flakiest croissant I've ever had! Perfect with my morning coffee.</p>
+                        <p className="line-clamp-2 hover:line-clamp-none leading-[28px] text-[#5C2C0C]">The flakiest croissant I have ever had! Perfect with my morning coffee.</p>
                         <div className="flex items-center gap-[10px]">
                             <div className="w-[50px] h-[50px] flex shrink-0 rounded-full p-1 border border-[#F5E6D8] overflow-hidden">
                                 <img src="/assets/photos/p2.png" className="w-full h-full object-cover rounded-full" alt="Angga Risky" />
