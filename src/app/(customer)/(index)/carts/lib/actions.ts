@@ -5,10 +5,9 @@ import { schemaShippingAddress } from "@/lib/schema";
 import { ActionResult, TCart } from "@/types";
 import { redirect } from "next/navigation";
 import { generateRandomString } from "@/lib/utils";
-import { PaymentRequestParameters, PaymentRequest } from "xendit-node/payment_request/models";
 import { Prisma } from "@prisma/client";
 import prisma from "../../../../../../prisma/lib/prisma";
-import xenditClient from "@/lib/xendit";
+import { snap } from "@/lib/midtrans";
 
 export async function storeOrder(
     _: unknown,
@@ -50,27 +49,31 @@ export async function storeOrder(
             }
         })
 
-        const data: PaymentRequestParameters = {
-            amount: total,
-            paymentMethod: {
-                ewallet: {
-                    channelProperties: {
-                        successReturnUrl: process.env.NEXT_PUBLIC_REDIRECT_URL
-                    },
-                    channelCode: 'SHOPEEPAY'
-                },
-                reusability: "ONE_TIME_USE",
-                type: "EWALLET"
+        // Create Midtrans transaction parameters
+        const parameter = {
+            transaction_details: {
+                order_id: order.code, // Use order code as transaction ID
+                gross_amount: total,
             },
-            currency: "IDR",
-            referenceId: order.code
-        }
+            customer_details: {
+                first_name: parse.data.name,
+                phone: parse.data.phone,
+                shipping_address: {
+                    address: parse.data.address,
+                    city: parse.data.city,
+                    postal_code: parse.data.postal_code,
+                }
+            },
+            callbacks: {
+                finish: `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/status`,
+                error: `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/status`,
+                pending: `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/status`
+            }
+        };
 
-        const response: PaymentRequest = await xenditClient.PaymentRequest.createPaymentRequest({
-            data
-        })
-
-        redirectPaymentUrl = response.actions?.find((val) => val.urlType === "DEEPLINK")?.url ?? "/"
+        // Create Midtrans transaction
+        const transaction = await snap.createTransaction(parameter);
+        redirectPaymentUrl = transaction.redirect_url; // Midtrans redirect URL
 
         const queryCreateProductOrder: Prisma.OrderProductCreateManyInput[] = []
 

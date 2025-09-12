@@ -29,17 +29,29 @@ export default async function Navbar() {
             <img src="/assets/logos/logo.svg" alt="Pastry Shop Logo" />
         </div>
         <ul className="flex items-center gap-[30px]">
+            {/* <li className="hover:font-bold hover:text-[#FFF8F0] transition-all duration-300 font-bold text-[#FFF8F0]">
+                <Link href="/">Home</Link>
+            </li>
             <li className="hover:font-bold hover:text-[#FFF8F0] transition-all duration-300 font-bold text-[#FFF8F0]">
+                <Link href="/catalogs">Menu</Link>
+            </li> */}
+            <li className="hover:font-bold hover:text-[#FFF8F0] transition-all duration-300 text-white">
+                <Link href="/">Home</Link>
+            </li>
+            <li className="hover:font-bold hover:text-[#FFF8F0] transition-all duration-300 text-white">
                 <Link href="/catalogs">Menu</Link>
             </li>
             <li className="hover:font-bold hover:text-[#FFF8F0] transition-all duration-300 text-white">
-                <Link href="/">Categories</Link>
+                <Link href="/catalogs">Categories</Link>
             </li>
             <li className="hover:font-bold hover:text-[#FFF8F0] transition-all duration-300 text-white">
-                <Link href="/">Testimonials</Link>
+                <Link href="/testimonials">Testimonials</Link>
             </li>
             <li className="hover:font-bold hover:text-[#FFF8F0] transition-all duration-300 text-white">
-                <Link href="/">Loyalty Program</Link>
+                <Link href="/loyalty">Loyalty Program</Link>
+            </li>
+            <li className="hover:font-bold hover:text-[#FFF8F0] transition-all duration-300 text-white">
+                <Link href="/support">Customer Support</Link>
             </li>
         </ul>
         <div className="flex items-center gap-3">

@@ -16,7 +16,7 @@ export default async function ListProducts({ title, isShowDetail = true }: ListP
 				<h2 className="font-bold text-2xl leading-[34px]">{title}</h2>
 				{isShowDetail && (
 					<a
-					href="catalog.html"
+					href="/catalogs"
 					className="p-[12px_24px] border border-[#E5E5E5] rounded-full font-semibold"
 				>
 					Explore All

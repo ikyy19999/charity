@@ -8,8 +8,8 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { DataTable } from "@/components/ui/data-table";
-import { getOrders } from './lib/data';
 import { columns } from './columns';
+import { getOrders } from './lib/data';
 
 export default async function OrdersPage() {
     const orders = await getOrders() 

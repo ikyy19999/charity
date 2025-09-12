@@ -20,7 +20,7 @@ function SubmitButton() {
             disabled={pending}
             className="p-[12px_24px] bg-[#0D5CD7] rounded-full text-center font-semibold text-white"
         >
-            {pending ? 'Checkout with xendit...' : 'Checkout Now'}
+            {pending ? 'Please wait...' : 'Checkout Now'}
         </button>
     )
 }

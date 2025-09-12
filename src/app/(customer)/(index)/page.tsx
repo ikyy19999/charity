@@ -36,7 +36,7 @@ export default function LandingPage() {
                         Order Now
                     </a>
                     <a
-                        href="/about"
+                        href="/catalogs"
                         className="p-[18px_24px] rounded-full font-semibold bg-white border border-[#D27D2D] text-[#D27D2D] hover:bg-[#FFF3E0] transition-colors"
                     >
                         View Menu
