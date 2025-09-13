@@ -50,7 +50,7 @@ export const columns: ColumnDef<TColumn>[] = [
   {
     accessorKey: 'price',
     header: 'Total Price',
-    cell: ({row}) => rupiahFormat(row.original.price)
+    cell: ({row}) => rupiahFormat(row.original.price + 1500)
   },
   {
     accessorKey: 'status',

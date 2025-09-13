@@ -51,25 +51,51 @@ export async function storeOrder(
 
         // Create Midtrans transaction parameters
         const parameter = {
-            transaction_details: {
-                order_id: order.code, // Use order code as transaction ID
-                gross_amount: total,
-            },
-            customer_details: {
-                first_name: parse.data.name,
-                phone: parse.data.phone,
-                shipping_address: {
-                    address: parse.data.address,
-                    city: parse.data.city,
-                    postal_code: parse.data.postal_code,
-                }
-            },
-            callbacks: {
-                finish: `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/status`,
-                error: `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/status`,
-                pending: `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/status`
-            }
-        };
+  transaction_details: {
+    order_id: order.code,
+    gross_amount: total + 1500, // total belanja + biaya tambahan (eco packaging misalnya)
+  },
+  customer_details: {
+    first_name: parse.data.name,
+    email: user.email, // wajib kalau mau muncul di dashboard
+    phone: parse.data.phone,
+    billing_address: {
+      first_name: parse.data.name,
+      email: user.email,
+      phone: parse.data.phone,
+      address: parse.data.address,
+      city: parse.data.city,
+      postal_code: parse.data.postal_code,
+    },
+    shipping_address: {
+      first_name: parse.data.name,
+      email: user.email,
+      phone: parse.data.phone,
+      address: parse.data.address,
+      city: parse.data.city,
+      postal_code: parse.data.postal_code,
+    },
+  },
+  item_details: products.map((p) => ({
+    id: p.id.toString(),   // wajib string
+    price: p.price,        // harga per item
+    quantity: p.quantity,  // jumlah item
+    name: p.name,          // nama produk
+  })).concat([
+    {
+      id: "eco_packaging",
+      price: 1500,
+      quantity: 1,
+      name: "Eco Packaging",
+    }
+  ]),
+  callbacks: {
+    finish: `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/status`,
+    error: `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/status`,
+    pending: `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/status`,
+  },
+}
+
 
         // Create Midtrans transaction
         const transaction = await snap.createTransaction(parameter);

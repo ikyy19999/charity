@@ -35,10 +35,10 @@ export default function CheckoutForm() {
 
     // Hitung biaya tambahan (tanpa PPN)
     const insurance = grandTotal * 0.12 // 12%
-    const shipping = 5000 // Flat shipping
+    const shipping = 0 // Flat shipping
     const warranty = grandTotal * 0.05 // 5%
 
-    const finalTotal = grandTotal + insurance + shipping + warranty
+    const finalTotal = grandTotal + shipping
 
     const storeOrderParams = (_: unknown, formData: FormData) =>
         storeOrder(_, formData, grandTotal, products)
@@ -162,23 +162,23 @@ export default function CheckoutForm() {
                 </div>
                 <div className="flex items-center justify-between">
                     <p className="text-[#5C2C0C]">Delivery Fee</p>
-                    <p className="font-semibold text-[#D27D2D]">{rupiahFormat(15000)}</p>
+                    <p className="font-semibold text-[#D27D2D]">Free Ongkir</p>
                 </div>
                 <div className="flex items-center justify-between">
                     <p className="text-[#5C2C0C]">Eco Packaging</p>
-                    <p className="font-semibold text-[#D27D2D]">{rupiahFormat(5000)}</p>
+                    <p className="font-semibold text-[#D27D2D]">{rupiahFormat(1500)}</p>
                 </div>
-                <div className="flex items-center justify-between">
+                {/* <div className="flex items-center justify-between">
                     <p className="text-[#5C2C0C]">Quality Guarantee</p>
                     <p className="font-semibold text-[#D27D2D]">{rupiahFormat(0)}</p>
-                </div>
+                </div> */}
             </div>
 
             {/* Grand Total */}
             <div className="flex flex-col gap-1">
                 <p className="font-semibold text-[#5C2C0C]">Grand Total</p>
                 <p className="font-bold text-[32px] leading-[48px] text-[#D27D2D]">
-                    {rupiahFormat(grandTotal + 20000)}
+                    {rupiahFormat(finalTotal + 1500)}
                 </p>
             </div>
 
