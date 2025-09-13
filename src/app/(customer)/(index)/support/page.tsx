@@ -27,7 +27,7 @@ export default function CustomerSupportPage() {
             icon: "💬",
             title: "Live Chat",
             description: "Instant messaging support",
-            details: "Available 24/7",
+            details: "Coming Soon: Available 24/7",
             action: "Coming Soon: Chat Support"
         },
         // {
