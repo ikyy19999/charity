@@ -45,11 +45,11 @@ export default function CustomerSupportPage() {
             questions: [
                 {
                     q: "How long does delivery take?",
-                    a: "Delivery typically takes 30-45 minutes within the city area. For outside city, please allow 1-2 hours."
+                    a: "Within the city, delivery usually takes around 30 mins (up to 45 mins if it\'s super busy). For outside the city, please allow 1–2 hours"
                 },
                 {
                     q: "What is the minimum order for delivery?",
-                    a: "Minimum delivery order is $15. Free delivery for orders above $30."
+                    a: "Minimum order is Rp50,000. Free delivery for orders above Rp100,000."
                 },
                 {
                     q: "Can I modify my order after placing it?",

@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Navbar from "../_components/navbar";
 
+export const metadata = {
+  title: "Pastry Perks ✨",
+}
+
 export default function LoyaltyProgram404() {
     return (
         <>

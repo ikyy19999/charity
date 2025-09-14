@@ -8,6 +8,10 @@ import FilterLocation from './_components/filter-location'
 import FilterCategories from './_components/filter-categories'
 import ProductListing from './_components/product-listing'
 
+export const metadata = {
+  title: "Pick Your Faves 😋",
+}
+
 export default function CatalogPage() {
   return (
     <>

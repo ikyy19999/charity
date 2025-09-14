@@ -5,12 +5,16 @@ const poppins = Poppins({
   subsets: ['latin-ext']
 })
 
-import '../../globalsLanding.css'
+import '../../../globalsLanding.css'
 
 import type { Metadata } from "next";
+import Navbar from "../_components/navbar";
 
 export const metadata: Metadata = {
-  title: "Sweet Vibes 🍩",
+  title: "Need Help? 🙋‍♂️",
+  // icons: {
+  //   icon: "/favicon.ico",
+  // },
 }
 
 export default function LandingRootLayout({
@@ -20,7 +24,10 @@ export default function LandingRootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <Navbar />
+        {children}
+        </body>
     </html>
   );
 }

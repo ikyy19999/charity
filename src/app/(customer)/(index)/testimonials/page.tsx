@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Navbar from "../_components/navbar";
 
+export const metadata = {
+  title: "Sweet Reviews 🍪",
+}
+
 export default function TestimonialsPage() {
     const testimonials = [
         {
